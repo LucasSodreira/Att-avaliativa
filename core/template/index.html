@@ -11,12 +11,18 @@
   <body>
     <main>
       <h1>Alunos Matriculados no IFRN</h1>
-
+      <div class="cadastro-aluno">
+        <label for="?">Cadastrar Aluno</label>
+        <button class="button-cadastro">
+          <a id="link-cadastro"href="{% url 'cadastrar_aluno' %}">Cadastrar Aluno</a>
+        </button>
+      </div>
       <form method="post">
         <table class="table">
           <thead>
             <tr>
               <th>Nome</th>
+              <th>Endereço</th>
               <th>Email</th>
               <th>Data Nascimento</th>
               <th>Cidade</th>
@@ -27,15 +33,16 @@
           <tbody>
             {% for aluno in alunos %}
               <tr>
-                <td>{{ aluno.nome }}</td>
+                <td><a id='name-aluno' href="editar-aluno/{{ aluno.id }}/">{{ aluno.nome }}</a></td>
+                <td>{{ aluno.endereco }} </td>
                 <td>{{ aluno.email }}</td>
                 <td>{{ aluno.data_nascimento }}</td>
                 <td>{{ aluno.cidade }}</td>
                 <td>{{ aluno.curso }}</td>
                 <td>
                     <div class="buttons-edit">
-                        <a href="{{ aluno.id }}/edit" class="Edit-button">Editar</a>
-                        <a href="{{ aluno.id }}/delete" class="delete-button">Remover</a></td>
+                        <a href="editar-aluno/{{ aluno.id }}/" class="Edit-button">Editar</a>
+                        <a href="excluir-aluno/{{ aluno.id }}" class="delete-button">Remover</a></td>
                     </div>
               </tr>
             {% endfor %}

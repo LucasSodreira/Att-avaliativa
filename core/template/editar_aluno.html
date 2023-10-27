@@ -1,0 +1,15 @@
+{% load static %}
+{% block main %}
+    
+<link rel="stylesheet" href="{% static 'editar_aluno.css' %}">
+<div class="edit-container">
+    
+    <h1>Editar Aluno - {{ alunos.titulo }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar Alterações</button>
+    </form>
+</div>
+{% endblock main %}
+

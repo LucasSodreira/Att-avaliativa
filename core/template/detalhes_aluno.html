@@ -1,0 +1,27 @@
+{% load static %}
+
+{% block main %}
+  <title>Detalhes do Aluno</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+  <body>
+    <h1>Detalhes do Aluno - {{ alunos.name }}</h1>
+    <p>
+      <strong>Nome:</strong> {{ alunos.name }}
+    </p>
+    <p>
+      <strong>Email:</strong> {{ alunos.email }}
+    </p>
+    <p>
+      <strong>Data de nascimento:</strong> {{ aluno.data_nascimento }}
+    </p>
+    <p>
+      <strong>Cidade:</strong> {{ alunos.cidade }}
+    </p>
+    <p>
+      <strong>Curso:</strong> {{ alunos.curso }}
+    </p>
+  </body>
+
+  <button><a href="{% url 'index' %}">Voltar</a></button>
+{% endblock %}
