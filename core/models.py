@@ -20,6 +20,6 @@ class Aluno(models.Model):
     endereco = models.CharField(max_length=100)
     email = models.EmailField()
     data_nascimento = models.DateField()
-    curso = models.ForeignKey(Curso, on_delete=models.CASCADE, verbose_name="Gravadora", default="Curso")
+    curso = models.ForeignKey(Curso, on_delete=models.CASCADE, verbose_name="Curso", default="Curso")
     cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE, default="Cidade", verbose_name="Cidade")
     
